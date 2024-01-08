@@ -201,7 +201,7 @@ def run():
 
             response = few_shot_prompting(model=model, prompt=prompt, parameters=parameters)
 
-            text = ' '.join(response.text.split())
+            text = ' '.join(response.text.split()).replace('. - ', '. ')
                  
             st.markdown(f"**Summary:** {text}") 
 
