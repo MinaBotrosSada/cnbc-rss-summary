@@ -1,10 +1,12 @@
-# Welcome to streamlit
+# Welcome to MB' RSS Feed Summarizer 
 
-This is the app you get when you run `streamlit hello`, extracted as its own app.
+This is an app which used Vertex AI GenAI Text Bison Model to summarize RSS feeds. The RSS feed URL can be changed in the UI, the default is FoxNews.
 
-Edit [Hello.py](./Hello.py) to customize this app to your heart's desire. ❤️
+Edit [rss.py](./rss.py) to customize this app to your heart's desire. ❤️
 
-Check it out on [Streamlit Community Cloud](https://st-hello-app.streamlit.app/)
+## Approach
+- I experimented with Zero-shot prompting and the results were decent
+- I experimented with Few-shot Promoting and the results were at time longer than expected in terms of number of output sentences but still acceptable
 
 
 ## Setup steps
