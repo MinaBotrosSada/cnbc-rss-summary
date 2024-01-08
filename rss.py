@@ -43,9 +43,9 @@ LOGGER = get_logger(__name__)
 def few_shot_prompting(model, prompt, parameters):   
                         
     response = model.predict(
-    f"""Summarize this article in 3 to 4 sentences, with new line after each sentence without bullet points
+    f"""Provide a very short, maximum four sentences, summary for the following article:
 
-        Article:Apple shares slid less than 1% on Friday after The New York Times reported that the U.S. Department of Justice is preparing an antitrust lawsuit against the iPhone maker, which could be filed as soon as this year.
+        Article: Apple shares slid less than 1% on Friday after The New York Times reported that the U.S. Department of Justice is preparing an antitrust lawsuit against the iPhone maker, which could be filed as soon as this year.
 
         The agency’s lawsuit could target how the Apple Watch works exclusively with the iPhone, as well as the company’s iMessage service, which is also solely available on Apple devices. It could also focus on Apple Pay, the company’s payments system, according to the report.
 
@@ -132,7 +132,7 @@ def few_shot_prompting(model, prompt, parameters):
         But a Politico report later revealed that not only were media kept in the dark, but that the highest levels of the White House and top officials in the Pentagon itself were not aware until Thursday Austin was in the hospital.
         Democrat Rep. Chris Deluzio, D-Pa., wrote on X Sunday evening, "I serve on the House Armed Services Committee and share the concerns of Chairman Rogers and Ranking Member Smith."
 
-        Summary:Democrats and Republicans in the House of Representatives are demanding more information on Defense Secretary Lloyd Austin's hospitalization and the delay in its announcement.
+        Summary: Democrats and Republicans in the House of Representatives are demanding more information on Defense Secretary Lloyd Austin's hospitalization and the delay in its announcement.
 
         The top lawmakers on the House Armed Services Committee, Mike Rogers and Adam Smith, have called for "additional details" on Austin's condition and the decision-making process.
 
@@ -181,7 +181,7 @@ def run():
 
         vertexai.init(project="minab-ddf-sandbox", location="us-central1")
         parameters = {
-            "max_output_tokens": 1024,
+            "max_output_tokens": 256,
             "temperature": 0.2,
             "top_k": 40, 
             "top_p": 0.8
